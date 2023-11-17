@@ -1,6 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./Product.js";
-import "./App.css";
+import './App.css';
 
 function App() {}
 

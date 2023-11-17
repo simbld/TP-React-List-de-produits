@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   extends: ["airbnb", "plugin:prettier/recommended"],
   overrides: [
@@ -25,11 +26,5 @@ module.exports = {
   },
   rules: {
     semi: "error",
-    simpleQuote: "true",
-    "react/react-in-jsx-scope": "off",
-    "react/no-unescaped-entities": [
-      "error",
-      { forbid: [">", "}", '"', "{", "<"] },
-    ],
   },
 };
