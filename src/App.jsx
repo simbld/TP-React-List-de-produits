@@ -1,5 +1,11 @@
 import './App.css';
 
-function App() {}
+function App() {
+  return (
+    <div className="App">
+      {/* application */}
+    </div>
+  );
+}
 
 export default App;

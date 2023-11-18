@@ -1,11 +1,11 @@
 /**
- * 
+ *
  * @param {string} placeholder
  * @param {string} value
  * @param {(s: string) => void} onChange
  */
 
-export default function Input({placeholder, value, onChange}) {
+export default function Input({ placeholder, value, onChange }) {
   return (
     <div>
       <input

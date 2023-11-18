@@ -33,5 +33,9 @@ module.exports = {
     semi: "error",
     "react/react-in-jsx-scope": 0,
     "react/jsx-uses-react": 0,
+    "import/extensions": ["error", "ignorePackages", {
+    "js": "never",
+    "jsx": "never"
+    }],
   },
 };
