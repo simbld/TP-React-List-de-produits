@@ -2,34 +2,58 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
-        node: true, // Ajouté pour couvrir l'environnement Node.js
+        node: true,
     },
     extends: [
         "airbnb",
-        "plugin:react/recommended", // Pour les règles recommandées de React
-        "plugin:react-hooks/recommended", // Pour les règles des hooks React
-        "prettier", // Assure que Prettier et ESLint ne sont pas en conflit
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "eslint:recommended",
+        "prettier",
     ],
     parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
         ecmaFeatures: {
-            jsx: true, // Support pour JSX
+            jsx: true,
+            js: true,
+            css: true,
         },
     },
-    plugins: [
-        "react", // Plugin ESLint pour React
-        "react-hooks", // Plugin pour les hooks React
-    ],
+    plugins: ["react", "react-hooks", "css"],
     rules: {
-        semi: "error",
+        "react/self-closing-comp": [
+            "error",
+            {
+                component: true,
+                html: true,
+            },
+        ],
+        "semi": ["error", "always"],
+        "no-unexpected-multiline": "error",
+        "quotes": [
+            "error",
+            "double",
+            { avoidEscape: true, allowTemplateLiterals: true },
+        ],
+        "no-tabs": ["error", { allowIndentationTabs: true }],
         "react/jsx-no-undef": 0,
         "react/react-in-jsx-scope": 0,
         "react/jsx-uses-react": 0,
-        // Ajoute ici d'autres règles personnalisées si nécessaire
     },
     overrides: [
         {
+            rules: {
+                "no-restricted-syntax": [
+                    "error",
+                    {
+                        selector: "SequenceExpression",
+                        message:
+                            "The comma operator is confusing and a common mistake. Don’t use it!",
+                    },
+                ],
+            },
+
             env: {
                 node: true,
             },
@@ -39,4 +63,9 @@ module.exports = {
             },
         },
     ],
+    settings: {
+        react: {
+            version: "18.2.0t",
+        },
+    },
 };
