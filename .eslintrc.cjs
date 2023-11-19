@@ -1,41 +1,42 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-    node: true,
-    es6: true,
-  },
-  extends: ["airbnb-base", "plugin:eslint-plugin/recommended"],
-  plugins: ["eslint-plugin"],
-  overrides: [
-    {
-      env: {
-        node: true,
+    env: {
         browser: true,
-      },
-      files: [".eslintrc.{js,cjs}"],
-      rules: {
-        "no-console": 0,
-      },
-      parserOptions: {
-        sourceType: "script",
-      },
+        es2021: true,
+        node: true, // Ajouté pour couvrir l'environnement Node.js
     },
-  ],
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    ecmaFeatures: {
-      jsx: true,
+    extends: [
+        "airbnb",
+        "plugin:react/recommended", // Pour les règles recommandées de React
+        "plugin:react-hooks/recommended", // Pour les règles des hooks React
+        "prettier", // Assure que Prettier et ESLint ne sont pas en conflit
+    ],
+    parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        ecmaFeatures: {
+            jsx: true, // Support pour JSX
+        },
     },
-  },
-  rules: {
-    semi: "error",
-    "react/react-in-jsx-scope": 0,
-    "react/jsx-uses-react": 0,
-    "import/extensions": ["error", "ignorePackages", {
-    "js": "never",
-    "jsx": "never"
-    }],
-  },
+    plugins: [
+        "react", // Plugin ESLint pour React
+        "react-hooks", // Plugin pour les hooks React
+    ],
+    rules: {
+        semi: "error",
+        "react/jsx-no-undef": 0,
+        "react/react-in-jsx-scope": 0,
+        "react/jsx-uses-react": 0,
+        // Ajoute ici d'autres règles personnalisées si nécessaire
+    },
+    overrides: [
+        {
+            env: {
+                node: true,
+            },
+            files: [".eslintrc.{js,cjs}"],
+            parserOptions: {
+                sourceType: "script",
+            },
+        },
+    ],
 };
