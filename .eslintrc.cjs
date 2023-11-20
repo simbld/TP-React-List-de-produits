@@ -65,7 +65,7 @@ module.exports = {
     ],
     settings: {
         react: {
-            version: "18.2.0t",
+            version: "18.2.0",
         },
     },
 };

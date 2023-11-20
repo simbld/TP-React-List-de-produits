@@ -1,12 +1,14 @@
 /**
+ *Represents a customizable check box.
  *
- * @param {boolean} checked
- * @param {(v: boolean) => void} onChange
- * @param {string} label
- * @param {string} id
+ * @param {boolean} checked - Indicates whether the check box is checked.
+ * @param {(b: boolean) => void} onChange - Function called when the check box sate changes.
+ *                        - Takes the new value of the box (true/false) as a parameter.
+ * @param {string} label - Text of the label associed with the check box.
+ * @param {string} id - Unique identifier for the check box, used for association with the label.
  */
 
-import PropTypes from "prop-types";
+import { checkBoxPropTypes } from "../../proptypes";
 
 export default function CheckBox({ checked, onChange, label, id }) {
     return (
@@ -25,9 +27,4 @@ export default function CheckBox({ checked, onChange, label, id }) {
     );
 }
 
-CheckBox.propTypes = {
-    checked: PropTypes.bool.isRequired,
-    onChange: PropTypes.func.isRequired,
-    label: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-};
+CheckBox.propTypes = checkBoxPropTypes;
