@@ -13,11 +13,15 @@ export const inputPropTypes = {
 };
 
 export const productRowPropTypes = {
-    product: PropTypes.string.isRequired,
+    product: PropTypes.shape.isRequired,
     stocked: PropTypes.bool.isRequired,
     productName: PropTypes.string.isRequired,
     price: PropTypes.string.isRequired,
     origin: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+};
+
+export const ProductCategoryRowPropTypes = {
     category: PropTypes.string.isRequired,
 };
 
@@ -31,6 +35,13 @@ export const productTablePropTypes = {
             category: PropTypes.string.isRequired,
         }),
     ).isRequired,
+};
+
+export const searchBarPropTypes = {
+    showStockedOnly: PropTypes.bool.isRequired,
+    onStockedOnlyChanged: PropTypes.func.isRequired,
+    search: PropTypes.string.isRequired,
+    onSearchChange: PropTypes.func.isRequired,
 };
 
 export const inputDefaultProps = {
