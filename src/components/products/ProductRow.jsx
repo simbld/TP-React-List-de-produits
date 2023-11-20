@@ -15,10 +15,10 @@ export default function ProductRow({ product }) {
     const style = product.stocked ? undefined : { color: "red" };
     return (
         <tr>
-            <td style={style}>{product.productName}</td>
-            <td>{product.price}</td>
-            <td>{product.origin}</td>
             <td>{product.category}</td>
+            <td style={style}>{product.productName}</td>
+            <td>{product.origin}</td>
+            <td>{product.price}</td>
         </tr>
     );
 }
