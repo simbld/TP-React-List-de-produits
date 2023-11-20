@@ -21,6 +21,18 @@ export const productRowPropTypes = {
     category: PropTypes.string.isRequired,
 };
 
+export const productTablePropTypes = {
+    products: PropTypes.arrayOf(
+        PropTypes.shape({
+            stocked: PropTypes.bool.isRequired,
+            productName: PropTypes.string.isRequired,
+            price: PropTypes.string.isRequired,
+            origin: PropTypes.string.isRequired,
+            category: PropTypes.string.isRequired,
+        }),
+    ).isRequired,
+};
+
 export const inputDefaultProps = {
     placeholder: "",
 };
