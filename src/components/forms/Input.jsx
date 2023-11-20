@@ -1,11 +1,14 @@
 /**
- *
- * @param {string} placeholder
- * @param {string} value
- * @param {(s: string) => void} onChange
+ * `Input` component for text input. 
+ * This component wraps a standard HTML input element and allows customization via props for value, value change, and placeholder text.
+ * 
+ * @param {string} placeholder - Indicative text displayed in the input field when empty.
+ * @param {string} value - Current value of the input field.
+ * @param {(s: string) => void} onChange - Function called each time the field value changes. 
+ *                               - Takes the new field value as a parameter.
  */
 
-import PropTypes from "prop-types";
+import { inputPropTypes, inputDefaultProps } from "../../proptypes";
 
 export default function Input({ value, onChange, placeholder }) {
     return (
@@ -21,11 +24,5 @@ export default function Input({ value, onChange, placeholder }) {
     );
 }
 
-Input.propTypes = {
-    value: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
-    placeholder: PropTypes.string,
-};
-Input.defaultProps = {
-    placeholder: "",
-};
+Input.propTypes = inputPropTypes;
+Input.defaultProps = inputDefaultProps;
